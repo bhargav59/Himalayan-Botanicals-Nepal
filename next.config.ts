@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 768, 1024, 1280, 1536],
     formats: ['image/webp'],
   },
-  serverExternalPackages: ['@prisma/client', '.prisma/client'],
+  serverExternalPackages: ['@prisma/client', '.prisma/client', '@libsql/isomorphic-ws'],
   experimental: {
     optimizePackageImports: [
       'lucide-react',
