@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 768, 1024, 1280, 1536],
     formats: ['image/webp'],
   },
+  serverExternalPackages: ['@prisma/client', '.prisma/client'],
   experimental: {
     optimizePackageImports: [
       'lucide-react',
@@ -20,3 +21,9 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+if (process.env.NODE_ENV === 'development' && process.env.CLOUDFLARE_ENV === '1') {
+  try {
+    require('@opennextjs/cloudflare').initOpenNextCloudflareForDev();
+  } catch {}
+}

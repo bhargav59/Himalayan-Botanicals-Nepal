@@ -7,13 +7,13 @@ import { sendQuoteConfirmation, notifyNewQuote } from '@/lib/email';
 const quoteSchema = z.object({
   name: z.string().min(1, 'Name is required').max(100),
   email: z.string().email('Invalid email format'),
-  phone: z.string().max(30).optional().default(''),
-  company: z.string().max(200).optional().default(''),
-  country: z.string().max(100).optional().default(''),
+  phone: z.string().max(30).nullish().transform(v => v ?? ''),
+  company: z.string().max(200).nullish().transform(v => v ?? ''),
+  country: z.string().max(100).nullish().transform(v => v ?? ''),
   product: z.string().min(1, 'Please select a product'),
   quantity: z.string().min(1, 'Quantity is required').max(200),
-  packaging: z.string().max(200).optional().default(''),
-  requirements: z.string().max(5000).optional().default(''),
+  packaging: z.string().max(200).nullish().transform(v => v ?? ''),
+  requirements: z.string().max(5000).nullish().transform(v => v ?? ''),
 });
 
 export type QuoteFormData = z.infer<typeof quoteSchema>;

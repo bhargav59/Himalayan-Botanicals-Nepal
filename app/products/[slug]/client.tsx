@@ -103,7 +103,7 @@ export function ProductDetailClient({ product }: Props) {
                     </Link>
                   </Button>
                   <Button asChild variant="outline" size="lg">
-                    <a href="/docs/06_ENGINEERING/QUALITY_CHECKLIST.md" target="_blank" rel="noopener noreferrer">
+                    <a href={`/api/documents/coa?product=${encodeURIComponent(product.name)}&botanical=${encodeURIComponent(product.botanicalName)}`} target="_blank" rel="noopener noreferrer">
                       <Download className="mr-2 h-4 w-4" />
                       Download COA
                     </a>

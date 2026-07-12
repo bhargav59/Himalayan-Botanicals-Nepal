@@ -1,14 +1,14 @@
 generator client {
-  provider = "prisma-client"
-  output   = "../lib/generated/prisma"
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
 }
 
 model ContactSubmission {
-  id        String   @id @default(uuid())
+  id        String   @id @default(cuid())
   name      String
   email     String
   phone     String   @default("")
@@ -16,11 +16,10 @@ model ContactSubmission {
   country   String   @default("")
   message   String
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 }
 
 model QuoteRequest {
-  id           String   @id @default(uuid())
+  id           String   @id @default(cuid())
   name         String
   email        String
   phone        String   @default("")
@@ -30,43 +29,27 @@ model QuoteRequest {
   quantity     String
   packaging    String   @default("")
   requirements String   @default("")
-  status       QuoteStatus @default(PENDING)
+  status       String   @default("PENDING")
   notes        String   @default("")
   createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-}
-
-enum QuoteStatus {
-  PENDING
-  QUOTED
-  ACCEPTED
-  REJECTED
-  CLOSED
 }
 
 model AdminUser {
-  id            String   @id @default(uuid())
-  email         String   @unique
-  name          String
-  passwordHash  String
-  role          AdminRole @default(EDITOR)
-  lastLoginAt   DateTime?
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-}
-
-enum AdminRole {
-  ADMIN
-  EDITOR
-  VIEWER
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String
+  passwordHash String
+  role         String    @default("EDITOR")
+  lastLoginAt  DateTime?
+  createdAt    DateTime  @default(now())
 }
 
 model AuditLog {
-  id        String   @id @default(uuid())
+  id        String   @id @default(cuid())
   action    String
   entity    String
   entityId  String?
   userId    String?
-  metadata  Json?
+  metadata  String?
   createdAt DateTime @default(now())
 }

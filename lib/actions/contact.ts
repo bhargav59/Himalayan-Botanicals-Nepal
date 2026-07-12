@@ -7,9 +7,9 @@ import { sendContactConfirmation, notifyNewContact } from '@/lib/email';
 const contactSchema = z.object({
   name: z.string().min(1, 'Name is required').max(100),
   email: z.string().email('Invalid email format'),
-  phone: z.string().max(30).optional().default(''),
-  company: z.string().max(200).optional().default(''),
-  country: z.string().max(100).optional().default(''),
+  phone: z.string().max(30).nullish().transform(v => v ?? ''),
+  company: z.string().max(200).nullish().transform(v => v ?? ''),
+  country: z.string().max(100).nullish().transform(v => v ?? ''),
   message: z.string().min(1, 'Message is required').max(5000),
 });
 
@@ -55,8 +55,8 @@ export async function submitContact(formData: FormData): Promise<ContactResult> 
       notifyNewContact({
         name: parsed.data.name,
         email: parsed.data.email,
-        company: parsed.data.company,
-        country: parsed.data.country,
+        company: parsed.data.company ?? '',
+        country: parsed.data.country ?? '',
         message: parsed.data.message,
       }),
     ]);

@@ -4,6 +4,7 @@ import { Providers } from './providers';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { OrganizationJsonLd } from '@/components/ui/json-ld';
+import { AnalyticsScript } from '@/lib/analytics';
 import '@/styles/globals.css';
 
 const fontHeading = Playfair_Display({
@@ -91,6 +92,7 @@ export default function RootLayout({
           <main id="main-content" className="min-h-screen">{children}</main>
           <Footer />
         </Providers>
+        <AnalyticsScript />
       </body>
     </html>
   );
