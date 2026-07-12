@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 50 30% 97%;
+    --foreground: 200 15% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 200 15% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 15% 12%;
+    --primary: 142 36% 36%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 35 25% 44%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 200 10% 90%;
+    --muted-foreground: 200 10% 40%;
+    --accent: 35 25% 44%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 200 10% 82%;
+    --input: 200 10% 82%;
+    --ring: 142 36% 36%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 200 15% 8%;
+    --foreground: 200 10% 90%;
+    --card: 200 15% 12%;
+    --card-foreground: 200 10% 90%;
+    --popover: 200 15% 12%;
+    --popover-foreground: 200 10% 90%;
+    --primary: 142 30% 45%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 35 20% 40%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 200 15% 20%;
+    --muted-foreground: 200 10% 60%;
+    --accent: 35 20% 40%;
+    --accent-foreground: 0 0% 90%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 90%;
+    --border: 200 15% 25%;
+    --input: 200 15% 25%;
+    --ring: 142 30% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-[hsl(var(--border))];
+  }
+  body {
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+::selection {
+  background-color: hsl(var(--primary) / 0.3);
+}
+
+@keyframes fm-fallback {
+  to { opacity: 1; transform: translateY(0) translateX(0); }
+}
+
+[style*="opacity: 0"] {
+  animation: fm-fallback 0.8s ease-out 0.1s forwards;
+}
