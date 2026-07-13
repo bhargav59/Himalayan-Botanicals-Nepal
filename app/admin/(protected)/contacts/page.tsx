@@ -26,7 +26,7 @@ export default async function AdminContactsPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
-              {contacts.map((c) => (
+              {contacts.map((c: any) => (
                 <tr key={c.id} className="hover:bg-gray-50">
                   <td className="px-4 py-3 text-gray-500 whitespace-nowrap">{c.createdAt.toLocaleDateString()}</td>
                   <td className="px-4 py-3 font-medium text-gray-900">{c.name}</td>

@@ -19,7 +19,7 @@ vi.mock('@/lib/email', () => ({
   notifyNewQuote: vi.fn().mockResolvedValue(undefined),
 }));
 
-import { submitContact, submitQuote } from '@/lib/actions/contact';
+import { submitContact } from '@/lib/actions/contact';
 import { submitQuote as submitQuoteAction } from '@/lib/actions/quote';
 
 function formDataFrom(obj: Record<string, string>): FormData {
