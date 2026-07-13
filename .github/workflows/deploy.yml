@@ -16,9 +16,7 @@ jobs:
           cache: npm
       - run: npm ci --legacy-peer-deps
       - run: npx prisma generate
-      - run: touch prisma/dev.db && npx prisma db push --skip-generate
-        env:
-          DATABASE_URL: "file:./prisma/dev.db"
+      - run: touch prisma/dev.db
       - run: npx opennextjs-cloudflare build
         env:
           DATABASE_URL: "file:./prisma/dev.db"
