@@ -43,7 +43,7 @@ export function WhyNepal() {
               <div className="mb-4 inline-flex rounded-xl bg-[hsl(var(--primary))]/10 p-3">
                 <Icon className="h-6 w-6 text-[hsl(var(--primary))]" />
               </div>
-              <h3 className="font-heading text-xl font-semibold text-[hsl(var(--foreground))]">
+              <h3 className="font-heading text-lg font-semibold text-[hsl(var(--foreground))]">
                 {reason.title}
               </h3>
               <p className="mt-2 text-[hsl(var(--muted-foreground))] leading-relaxed">

@@ -191,7 +191,7 @@ export default function AboutPage() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((value, i) => (
             <AnimatedCard key={value.title} index={i}>
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[hsl(var(--primary))]/10 text-[hsl(var(--primary))]">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[hsl(var(--primary))]/10 text-[hsl(var(--primary))]">
                 <value.icon className="h-6 w-6" />
               </div>
               <h3 className="font-heading text-xl font-semibold text-[hsl(var(--foreground))]">

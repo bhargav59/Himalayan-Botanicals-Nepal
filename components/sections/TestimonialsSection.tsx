@@ -35,7 +35,7 @@ export function TestimonialsSection() {
           <motion.div
             key={testimonial.name}
             variants={itemVariants}
-            className="relative rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-8 shadow-sm"
+            className="relative rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-8 shadow-md border-l-4 border-l-[hsl(var(--primary))]/20"
           >
             <div className="mb-4 text-5xl leading-none text-[hsl(var(--primary))]/20 font-serif">
               &ldquo;

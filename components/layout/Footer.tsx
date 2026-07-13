@@ -30,13 +30,13 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[hsl(var(--foreground))] text-[hsl(var(--muted-foreground))]">
+    <footer className="bg-[hsl(var(--foreground))] text-white/65 dark:text-[hsl(var(--background))]/80">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2">
               <Leaf aria-hidden="true" className="h-6 w-6 text-[hsl(var(--primary))]" />
-              <span className="font-heading text-lg font-bold text-white">
+              <span className="font-heading text-lg font-bold text-white dark:text-[hsl(var(--background))]">
                 Himalayan<span className="text-[hsl(var(--primary))]"> Botanicals</span>
               </span>
             </Link>
@@ -51,13 +51,13 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <Mail aria-hidden="true" className="h-4 w-4 shrink-0 text-[hsl(var(--primary))]" />
-                <a href="mailto:info@himalayanbotanicals.com.np" className="hover:text-white transition-colors">
+                <a href="mailto:info@himalayanbotanicals.com.np" className="hover:text-white dark:hover:text-[hsl(var(--background))] transition-colors">
                   info@himalayanbotanicals.com.np
                 </a>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <Phone aria-hidden="true" className="h-4 w-4 shrink-0 text-[hsl(var(--primary))]" />
-                <a href="tel:+977-1-4XXXXXX" className="hover:text-white transition-colors">
+                <a href="tel:+977-1-4XXXXXX" className="hover:text-white dark:hover:text-[hsl(var(--background))] transition-colors">
                   +977-1-4XXXXXX
                 </a>
               </div>
@@ -65,7 +65,7 @@ export default function Footer() {
           </div>
 
           <nav aria-label="Products">
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white dark:text-[hsl(var(--background))]">
               Products
             </h3>
             <ul className="space-y-2.5">
@@ -73,7 +73,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm transition-colors hover:text-white inline-flex items-center gap-1"
+                    className="text-sm transition-colors hover:text-white dark:hover:text-[hsl(var(--background))] inline-flex items-center gap-1"
                   >
                     {link.label}
                     <ArrowUpRight aria-hidden="true" className="h-3 w-3 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all" />
@@ -84,7 +84,7 @@ export default function Footer() {
           </nav>
 
           <nav aria-label="Company">
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white dark:text-[hsl(var(--background))]">
               Company
             </h3>
             <ul className="space-y-2.5">
@@ -92,7 +92,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm transition-colors hover:text-white"
+                    className="text-sm transition-colors hover:text-white dark:hover:text-[hsl(var(--background))]"
                   >
                     {link.label}
                   </Link>
@@ -102,7 +102,7 @@ export default function Footer() {
           </nav>
 
           <nav aria-label="Resources">
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white dark:text-[hsl(var(--background))]">
               Resources
             </h3>
             <ul className="space-y-2.5">
@@ -110,7 +110,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm transition-colors hover:text-white"
+                    className="text-sm transition-colors hover:text-white dark:hover:text-[hsl(var(--background))]"
                   >
                     {link.label}
                   </Link>
@@ -126,10 +126,10 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} Himalayan Botanicals Nepal. All rights reserved.
             </p>
             <div className="flex gap-6 text-xs">
-              <Link href="/privacy-policy" className="hover:text-white transition-colors">
+              <Link href="/privacy-policy" className="hover:text-white dark:hover:text-[hsl(var(--background))] transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="hover:text-white transition-colors">
+              <Link href="/terms" className="hover:text-white dark:hover:text-[hsl(var(--background))] transition-colors">
                 Terms & Conditions
               </Link>
             </div>

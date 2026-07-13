@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 
 export function CTASection() {
   return (
-    <section className="bg-[hsl(var(--primary))] py-20">
+    <section className="bg-[hsl(var(--primary))] py-16 md:py-24">
       <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

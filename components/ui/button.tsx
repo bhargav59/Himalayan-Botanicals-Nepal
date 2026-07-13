@@ -8,9 +8,9 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:opacity-90',
-        secondary: 'bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:opacity-90',
-        outline: 'border border-[hsl(var(--border))] bg-transparent hover:bg-[hsl(var(--muted))]',
+        default: 'bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] shadow-sm hover:shadow-md hover:opacity-90',
+        secondary: 'bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] shadow-sm hover:shadow-md hover:opacity-90',
+        outline: 'border border-[hsl(var(--border))] bg-transparent hover:bg-[hsl(var(--muted))] hover:shadow-sm',
         ghost: 'hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))]',
         link: 'text-[hsl(var(--primary))] underline-offset-4 hover:underline',
       },

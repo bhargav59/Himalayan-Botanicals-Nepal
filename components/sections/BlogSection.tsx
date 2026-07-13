@@ -38,7 +38,7 @@ export function BlogSection() {
                 })}
               </span>
             </div>
-            <h3 className="font-heading text-lg font-semibold text-[hsl(var(--foreground))]">
+            <h3 className="font-heading text-xl font-semibold text-[hsl(var(--foreground))]">
               {post.title}
             </h3>
             <p className="mt-2 flex-1 text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">

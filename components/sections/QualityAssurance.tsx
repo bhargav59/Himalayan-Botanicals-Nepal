@@ -37,8 +37,8 @@ export function QualityAssurance() {
           const Icon = feature.icon;
           return (
             <AnimatedCard key={feature.title} index={index}>
-              <div className="mb-5 inline-flex rounded-2xl bg-[hsl(var(--primary))]/10 p-4">
-                <Icon className="h-8 w-8 text-[hsl(var(--primary))]" />
+              <div className="mb-4 inline-flex rounded-xl bg-[hsl(var(--primary))]/10 p-3">
+                <Icon className="h-6 w-6 text-[hsl(var(--primary))]" />
               </div>
               <h3 className="font-heading text-xl font-semibold text-[hsl(var(--foreground))]">
                 {feature.title}
