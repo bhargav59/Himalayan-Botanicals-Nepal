@@ -20,9 +20,6 @@ jobs:
       - run: npx opennextjs-cloudflare build
         env:
           DATABASE_URL: "file:./prisma/dev.db"
-      - run: echo "Token verify test: $(curl -s -o /dev/null -w '%{http_code}' -H 'Authorization: Bearer $CLOUDFLARE_API_TOKEN' https://api.cloudflare.com/client/v4/user/tokens/verify)"
+      - run: npx wrangler deploy .open-next/worker.js --name himalayan-botanicals-nepal
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      - run: npx wrangler deploy .open-next/worker.js --name himalayan-botanicals-nepal 2>&1
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: '${{ secrets.CLOUDFLARE_API_TOKEN }}'
