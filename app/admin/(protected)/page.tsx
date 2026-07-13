@@ -53,7 +53,7 @@ export default async function AdminDashboard() {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
-              {recentQuotes.map((quote) => (
+              {recentQuotes.map((quote: any) => (
                 <tr key={quote.id} className="hover:bg-gray-50">
                   <td className="px-4 py-3 font-medium text-gray-900">{quote.name}</td>
                   <td className="px-4 py-3 text-gray-600">{quote.product}</td>
